@@ -27,6 +27,6 @@ def test_very_verbose_flag_sets_debug_level():
 
 def test_quiet_and_verbose_mutually_exclusive():
     """Test that --quiet and --verbose cannot be used together."""
-    result = runner.invoke(app, ["--quiet", "--verbose", "--version"])
+    result = runner.invoke(app, ["--quiet", "--verbose", "info"])
     assert result.exit_code != 0
     assert "Cannot use --quiet with --verbose" in result.output
